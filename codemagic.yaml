@@ -1,0 +1,16 @@
+
+workflows:
+  android-build:
+    name: Android Build Workflow
+    description: Build Android APK
+    platform: android
+    android:
+      sdk: stable
+      build:
+        commands:
+          - flutter pub get
+          - flutter build apk
+    artifacts:
+      - build/app/outputs/flutter-apk/app-release.apk
+    publish:
+      email: your-email@example.com
